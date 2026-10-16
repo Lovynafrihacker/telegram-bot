@@ -1,26 +1,3 @@
-const express = require('express');
-const app = express();
-
-// Render ke liye chota sa web server
-app.get('/', (req, res) => {
-    sendResponse = "🤖 Telegram Prediction Bot is Active & Running 24/7!";
-    res.send(sendResponse);
-});
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
-
-// --- Yahan se aapka pehla wala poora bot aur cron code shuru hoga ---
-require('dotenv').config();
-const { Telegraf, Markup } = require('telegraf');
-const mongoose = require('mongoose');
-const cron = require('node-cron');
-const { User, Channel, Button } = require('./models');
-
-// (Baaki ka aapka saara code waisa ka waisa hi rahega...)
-
 const mongoose = require('mongoose');
 
 // User Schema (Tracking, Expiry, Status)
